@@ -1,4 +1,4 @@
-FROM jupyter/base-notebook:lab
+FROM registry.cn-beijing.aliyuncs.com/k8s_test/geonotebook:geolab-v1
 
 USER root
 
