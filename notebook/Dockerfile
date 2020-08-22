@@ -1,4 +1,4 @@
-FROM registry.cn-beijing.aliyuncs.com/k8s_test/geonotebook:geolab-v1
+FROM registry.cn-beijing.aliyuncs.com/k8s_test/geonotebook:geolab-v2
 
 USER root
 
@@ -13,15 +13,15 @@ RUN conda install --yes \
     -c conda-forge \
     python-blosc \
     cytoolz \
-    dask==2.17.2 \
+    dask \
     lz4 \
     nomkl \
-    numpy==1.18.1 \
-    pandas==1.0.1 \
+    numpy== \
+    pandas== \
     ipywidgets \
-    dask-labextension==2.0.2 \
+    dask-labextension \
     python-graphviz \
-    && jupyter labextension install @jupyter-widgets/jupyterlab-manager dask-labextension@2.0.2 \
+    && jupyter labextension install @jupyter-widgets/jupyterlab-manager dask-labextension \
     && conda clean -tipsy \
     && jupyter lab clean \
     && jlpm cache clean \
