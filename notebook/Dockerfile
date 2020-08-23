@@ -47,8 +47,9 @@ RUN mkdir /opt/app \
 COPY examples/ /home/$NB_UID/examples
 COPY prepare.sh /usr/bin/prepare.sh
 RUN chmod +x /usr/bin/prepare.sh
+RUN prepare.sh
 
 USER $NB_UID
 
 ENTRYPOINT ["/jupyter.sh"]
-#CMD ["start.sh", "jupyter", "lab"]
+CMD ["start.sh", "jupyter", "lab"]
