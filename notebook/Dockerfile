@@ -7,7 +7,7 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-USER $NB_USER
+USER $NB_UID
 
 RUN conda install --yes \
     -c conda-forge \
@@ -44,10 +44,10 @@ RUN mkdir /opt/app \
 
 # Copy over the example as NB_USER. Unfortuantely we can't use $NB_UID/$NB_GID
 # in the `--chown` statement, so we need to hardcode these values.
-COPY chown -R 1000:100 examples/ /home/$NB_USER/examples
+COPY examples/ /home/$NB_UID/examples
 COPY prepare.sh /usr/bin/prepare.sh
 
-USER $NB_USER
+USER $NB_UID
 
 ENTRYPOINT ["tini", "--", "/usr/bin/prepare.sh"]
 CMD ["start.sh", "jupyter", "lab"]
