@@ -46,6 +46,7 @@ RUN mkdir /opt/app \
 # in the `--chown` statement, so we need to hardcode these values.
 COPY examples/ /home/$NB_UID/examples
 COPY prepare.sh /usr/bin/prepare.sh
+RUN chmod +x /usr/bin/prepare.sh
 
 USER $NB_UID
 
