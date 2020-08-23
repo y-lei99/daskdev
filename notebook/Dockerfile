@@ -16,8 +16,8 @@ RUN conda install --yes \
     dask \
     lz4 \
     nomkl \
-    numpy== \
-    pandas== \
+    numpy \
+    pandas \
     ipywidgets \
     dask-labextension \
     python-graphviz \
