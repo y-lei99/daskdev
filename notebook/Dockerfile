@@ -50,5 +50,5 @@ RUN chmod +x /usr/bin/prepare.sh
 
 USER $NB_UID
 
-ENTRYPOINT ["tini", "--", "/usr/bin/prepare.sh"]
-CMD ["start.sh", "jupyter", "lab"]
+ENTRYPOINT ["/jupyter.sh"]
+#CMD ["start.sh", "jupyter", "lab"]
