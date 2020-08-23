@@ -44,7 +44,7 @@ RUN mkdir /opt/app \
 
 # Copy over the example as NB_USER. Unfortuantely we can't use $NB_UID/$NB_GID
 # in the `--chown` statement, so we need to hardcode these values.
-COPY --chown=1000:100 examples/ /home/$NB_USER/examples
+#COPY --chown=1000:100 examples/ /home/$NB_USER/examples
 COPY prepare.sh /usr/bin/prepare.sh
 
 USER $NB_USER
