@@ -1,4 +1,4 @@
-FROM registry.cn-beijing.aliyuncs.com/k8s_test/geonotebook:geolab-v2
+FROM registry.cn-beijing.aliyuncs.com/k8s_test/geonotebook:geolab-v4
 
 USER root
 
